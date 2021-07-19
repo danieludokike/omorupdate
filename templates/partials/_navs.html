@@ -1,0 +1,99 @@
+{% load static %}
+<!-- Top Bar Start -->
+ <div class="top-bar">
+        <div class="container">
+            <div class="row">
+            <div class="col-md-6">
+                <div class="tb-contact">
+                <p><i class="fas fa-envelope"></i>omorupdateinfo@gmail.com</a></p>
+                <p><i class="fas fa-phone-alt"></i>+2349071790126</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="tb-menu">
+                <a href="{% url 'omorapp:about' %}" >About</a>
+                <a href="https://dashboard.flutterwave.com/donate/3dnpvaqf0vgd" target="_blank">Supports</a>
+                <a href="#">Education</a>
+                <a href="{% url 'omorapp:contact' %}">Contact</a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+        <!-- Top Bar Start -->
+    
+        <!-- Brand Start -->
+        <div class="brand">
+        <div class="container">
+            <div class="row align-items-center">
+            <div class="col-lg-6 col-md-4">
+                <div class="b-ads">
+                <a href="{% url 'omorapp:home' %}">
+                    <img src="{% static 'omorapp/img/omorupdatelogo.png' %}" alt="Ads" />
+                </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4">
+                <div class="b-logo">
+                <a href="{% url 'omorapp:home' %}"><i style="color: red;" class="fas fa-bullhorn fa-2x"></i>
+            <marquee behavior="smooth" direction="left"><h3 style="color:red;">Welcome to Omor Update!! Be the first to know the happenings in Omor Aniukwu Kingdom</h3></marquee>
+                </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4">
+                <div class="b-search">
+                    <a href="{% url 'omorapp:join_team' %}"><input type="button" value="JOIN TEAM OMOR UPDATE" /></a>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+        <!-- Brand End -->
+    
+        <!-- Nav Bar Start -->
+        <div class="nav-bar" >
+        <div class="container">
+            <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <a href="#" class="navbar-brand">MENU</a>
+            <button
+                type="button"
+                class="navbar-toggler"
+                data-toggle="collapse"
+                data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div
+                class="collapse navbar-collapse justify-content-between"
+                id="navbarCollapse">
+                <div class="navbar-nav mr-auto">
+                <a href="{% url 'omorapp:home' %}" class="nav-item nav-link active">Home</a>
+                <a href="{% url 'omorapp:blog' %}" class="nav-item nav-link">Blog</a>
+                <a href="https://dashboard.flutterwave.com/donate/3dnpvaqf0vgd" target="_blank" class="nav-item nav-link">Supports</a>
+                <a href="{% url 'omorapp:contact' %}" class="nav-item nav-link">Contact Us</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="fas fa-user"></i></a>
+                    <div class="dropdown-menu">
+                    {% if request.user.is_authenticated %}
+                        <a style="color: red;" href="{% url 'omorapp:logout'  %}" class="dropdown-item"> <i class="fas fa-sign-out-alt"></i> Logout</a>
+                      {% else %}
+                      <a href="{% url 'omorapp:signup' %}" class="dropdown-item"><i class="fas fa-user-plus"></i> Register</a>
+                      <a href="{% url 'omorapp:login' %}" class="dropdown-item"><i class="fas fa-user"></i> Login</a>
+                    {% endif %}
+                    
+                    
+                    </div>
+                </div>
+                </div>
+                <div class="social ml-auto">
+                <a href="https://facebook.com/groups/529004645190324/"><i class="fab fa-facebook-f"></i></a>
+                <a href="mailto:omorupdateinfo@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="{% url 'omorapp:blog' %}"><i class="fas fa-search"></i></a>
+                <a href="{% url 'omorapp:members' %}"><i class="fas fa-users"></i></a>
+                </div>
+            </div>
+            </nav>
+        </div>
+    </div>
+        <!-- Nav Bar End -->

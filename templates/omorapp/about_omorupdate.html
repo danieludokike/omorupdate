@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+ {% load static %}
+  {% block title %} Omorupdate| Aboutomorupdate{% endblock title %} 
+  
+  {% block content %}
+<!-- Single News Start-->
+<div class="single-news">
+  <div class="container">
+    <div class="sn-container">
+      {% for field in about_omorupdate  %}
+      <div class="sn-img">
+        <!-- <img src="{{ field.image.url }}" width="400" height="400" /> -->
+      </div>
+      <div class="sn-content">
+        <h1 class="sn-title text-center">About Omor Update</h1>
+        <p class="text-center">{{ field.about }}</p>
+        <h3 class="text-center">Vision Of Omor Update</h3>
+        <p class="text-center">{{ field.vision }}</p>
+        <h4 class="text-center">Mission Of Omor Update</h4>
+        <p class="text-center">{{ field.mission }}</p>
+      </div>
+      {% endfor %}
+      <li>
+        <button>
+          <a href="https://dashboard.flutterwave.com/donate/3dnpvaqf0vgd" target="_blank">Support this website</a>
+        </button>
+        <button>
+          <a href="{% url 'omorapp:members' %}">Team Omor Update</a>
+        </button>
+      </li>
+
+    </div>
+  </div>
+</div>
+<!-- Single News End-->
+
+{% endblock content %}
