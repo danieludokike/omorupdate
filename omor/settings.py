@@ -3,7 +3,6 @@ import os
 import dj_database_url
 import django_heroku
 import environ
-import 
 
 # ENVIRONMENT VARIABLES
 env = environ.Env(
