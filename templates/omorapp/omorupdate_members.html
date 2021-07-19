@@ -1,0 +1,25 @@
+{% extends "base.html" %} 
+
+{% load static %}
+ {% block title %} Team Omor Update {% endblock title %}
+
+{% block content %}
+<!-- Main News Start-->
+  <div style="margin-top: 20px;" class="container">
+      <div class="col-lg-12">
+        <div class="row">
+          {% for member in members %}
+          <div class="col-md-4">
+            <div class="tn-img">
+                <img style="max-width: 100%" src="{{ member.image.url }}" alt="{{ member.full_name }}" width="400" height="253" />
+                <P>NAME: {{ member.full_name }}</P>
+                <P>POSITION: {{ member.position }}</P>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+  </div>
+<!-- Main News End-->
+
+{% endblock content %}
