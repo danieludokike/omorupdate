@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+
+{% load cloudinary %}
 {% load static %}
 
 {% block title %} Omorupdate|Contact Us{% endblock title %}
@@ -9,7 +11,7 @@
 <div class="breadcrumb-wrap">
         <div class="container">
           <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'omorapp:home' %}">Home</a></li>
             <li class="breadcrumb-item active">Contact</li>
           </ul>
         </div>
