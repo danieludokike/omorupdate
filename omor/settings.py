@@ -89,30 +89,31 @@ WSGI_APPLICATION = 'omor.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env.str('DB_NAME'),
-        'USER': env.str('DB_USER'),
-        'PASSWORD': env.str('DB_PASSWORD'),
-        'HOST': env.str('HOST'),
-        'PORT': env.int('PORT'),
-
-     }
-}
-
-# if not DEBUG:
+# if DEBUG:
 #     DATABASES = {
 #         'default': {
-#             'ENGINE': 'django.db.backends.sqlite3',
-#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#
+#             'ENGINE': 'django.db.backends.postgresql',
+#             'NAME': env.str('DB_NAME'),
+#             'USER': env.str('DB_USER'),
+#             'PASSWORD': env.str('DB_PASSWORD'),
+#             'HOST': 'localhost',
+#             'PORT': 5433,
+#
 #         }
 #     }
 
+if not DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+
     # HEROKU POSTGRES SETUP
-    # db_from_env = dj_database_url.config(conn_max_age=600)
-    # DATABASES['default'].update(db_from_env)
+    db_from_env = dj_database_url.config(conn_max_age=600)
+    DATABASES['default'].update(db_from_env)
 
     # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -176,14 +177,14 @@ EMAIL_HOST_PASSWORD = env.str('EMAIL_HOST_PASSWORD')
 DEFAULT_FROM_EMAIL = env.str('DEFAULT_FROM_EMAIL')
 SERVER_EMAIL = env.str('SERVER_EMAIL')
 
-# if not DEBUG:
-#     # HTTPs Settings
-#     SESSION_COOKIE_SECURE = True
-#     CSRF_COOKIE_SECURE = True
-#     SECURE_SSL_REDIRECT = True
-#     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-#
-#     # HSTS Settings
-#     SECURE_HSTS_SECONDS = 31536000  # A year
-#     SECURE_HSTS_PRELOAD = True
-#     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+if not DEBUG:
+    # HTTPs Settings
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_SSL_REDIRECT = True
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+    # HSTS Settings
+    SECURE_HSTS_SECONDS = 31536000  # A year
+    SECURE_HSTS_PRELOAD = True
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
