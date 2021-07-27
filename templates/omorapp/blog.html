@@ -46,7 +46,7 @@
                   <img src="{{ field.image.url }}" width="100" height="100" />
                 </div>
                 <p style="padding: 10px;">{{ field.write_up|truncatechars:"100" }} 
-                  <a href="{% url 'omorapp:blog_details' field.id %}"><button style="color:red;">Read more</button></a>
+                  <a href="{% url 'omorapp:blog_details' field.id field.head_line %}"><button style="color:red;">Read more</button></a>
                 </p>
               </div>
               {% endfor %}
@@ -58,7 +58,7 @@
                   <img src="{{ field.image.url }}" width="100" height="100" />
                 </div>
                 <p style="padding: 10px;">{{ field.write_up|truncatechars:"100" }} 
-                  <a href="{% url 'omorapp:blog_details' field.id %}"><button style="color:red;">Read more</button></a>
+                  <a href="{% url 'omorapp:blog_details' field.id field.head_line %}"><button style="color:red;">Read more</button></a>
                 </p>
               </div>
               {% endfor %}
@@ -70,7 +70,7 @@
                   <img src="{{ field.image.url }}" width="100" height="100" />
                 </div>
                 <p style="padding: 10px;">{{ field.write_up|truncatechars:"100" }} 
-                  <a href="{% url 'omorapp:blog_details' field.id %}"><button style="color:red;">Read more</button></a>
+                  <a href="{% url 'omorapp:blog_details' field.id field.head_line %}"><button style="color:red;">Read more</button></a>
                 </p>
               </div>
               {% endfor %}
@@ -103,7 +103,7 @@
                   <img src="{{ field.image.url }}" width="100" height="100" />
                 </div>
                 <p style="padding: 10px;">{{ field.write_up|truncatechars:"100" }} 
-                  <a href="{% url 'omorapp:blog_details' field.id %}"><button style="color:red;">Read more</button></a>
+                  <a href="{% url 'omorapp:blog_details' field.id field.head_line %}"><button style="color:red;">Read more</button></a>
                 </p>
               </div>
               {% endfor %}
@@ -115,7 +115,7 @@
                   <img src="{{ field.image.url }}" width="100" height="100" />
                 </div>
                 <p style="padding: 10px;">{{ field.write_up|truncatechars:"100" }} 
-                  <a href="{% url 'omorapp:blog_details' field.id %}" ><button style="color:red;">Read more</button></a>
+                  <a href="{% url 'omorapp:blog_details' field.id field.head_line %}" ><button style="color:red;">Read more</button></a>
                 </p>
               </div>
               {% endfor %}
@@ -127,7 +127,7 @@
                   <img src="{{ field.image.url }}" width="100" height="100" />
                 </div>
                 <p style="padding: 10px;">{{ field.write_up|truncatechars:"100" }} 
-                  <a href="{% url 'omorapp:blog_details' field.id %}"><button style="color:red;">Read more</button></a>
+                  <a href="{% url 'omorapp:blog_details' field.id field.head_line %}"><button style="color:red;">Read more</button></a>
                 </p>
               </div>
               {% endfor %}

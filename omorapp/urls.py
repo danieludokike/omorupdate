@@ -6,7 +6,7 @@ app_name = "omorapp"
 urlpatterns = [
     path("", views.HomeView.as_view(), name="home"),
     path("blogs/", views.blog_post_display_view, name='blog'),
-    path("blog/<int:pk>/details/", views.blog_post_detail_view, name='blog_details'),
+    path("blog/<int:pk>/<str:post_name>/details/", views.blog_post_detail_view, name='blog_details'),
 
     path("about-omor-update/", views.about_omorupdate_view, name='about'),
     path("team-omor-update/", views.omorupdate_members, name='members'),

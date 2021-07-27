@@ -151,12 +151,12 @@ def join_omor_update(request):
     return redirect("omorapp:login")
 
 
-def blog_post_detail_view(request, pk=1):
+def blog_post_detail_view(request, pk=1, post_name=None):
     """CREATES A BLOG AND SAVE TO THE DATABASE TO BE PUBLISHED IN THE SITE"""
     post = get_object_or_404(BlogPost, id=pk)
     post.views += 1
     post.save()
-
+    print(post_name)
     form = CommentForm()
     if request.method == 'POST':
         if request.user.is_authenticated:
