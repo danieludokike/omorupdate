@@ -8,7 +8,6 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, FormView
 from django.utils.decorators import method_decorator
-from django.contrib.auth.decorators import login_required, permission_required
 
 from .models import (
     BlogPost, Comment,
