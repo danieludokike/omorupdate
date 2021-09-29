@@ -179,6 +179,8 @@ LOGIN_URL = 'omorapp:login'
 LOGIN_REDIRECT_URL = 'omorapp:login'
 LOGOUT_REDIRECT_URL = 'omorapp:home'
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 # EMAIL CONFIGURATION
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True

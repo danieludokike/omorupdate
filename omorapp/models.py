@@ -8,7 +8,7 @@ class BlogPost(models.Model):
     """MODEL TO STORE THE POST OF EACH AUTHOR"""
     author = models.CharField(max_length=50, null=True)
     head_line = models.CharField(max_length=100, null=True)
-    write_up = models.TextField(max_length=5000, null=True)
+    write_up = models.TextField(max_length=10000, null=True)
     date = models.DateField(auto_now_add=True, null=True)
     time = models.TimeField(auto_now_add=True, null=True)
     image = models.ImageField(blank=True, null=True, upload_to='post_images/')
